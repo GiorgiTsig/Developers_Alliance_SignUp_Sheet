@@ -1,11 +1,16 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <referenceBlock name="content">
+    <referenceContainer name="content">
         <block
-            template= "Giorgi_Tsignadze::content.phtml"
+            template="Giorgi_Tsignadze::content.phtml"
             class="Giorgi\Tsignadze\Block\Example"
-            name="signup"/>
-    </referenceBlock>
+            name="signup"
+            cacheable="false"/>
+    </referenceContainer>
+    <referenceContainer name="page.messages">
+        <block class="Magento\Framework\View\Element\Template" name="ajax.message.placeholder" template="Magento_Theme::html/messages.phtml"/>
+        <block class="Magento\Framework\View\Element\Messages" name="messages" as="messages" template="Magento_Theme::messages.phtml"/>
+    </referenceContainer>
 </page>
 
