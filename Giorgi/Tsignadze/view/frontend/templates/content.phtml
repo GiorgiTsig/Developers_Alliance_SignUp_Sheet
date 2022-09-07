@@ -3,6 +3,7 @@ use Giorgi\Tsignadze\Block\Example;
 /** @var Example $block */
 ?>
 
+<?php if ($block->getReciveYesNO() === '1'):?>
 <form method="post" action="http://magento.localhost/signup/signup/saveform">
     <label for="fname">name:</label><br>
     <input type="text" id="fname" name="fname" value="<?= $block->getname() ?>"><br>
@@ -11,4 +12,4 @@ use Giorgi\Tsignadze\Block\Example;
     <input type="date" id="date" name="date" value="<?= $block->getdate() ?>">
     <input type="submit" value="Submit">
 </form>
-
+<?php endif; ?>
